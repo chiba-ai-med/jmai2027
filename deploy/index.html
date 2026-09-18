@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第9回日本メディカルAI学会学術集会｜2027年6月11日（金）～12日（土）パシフィコ横浜会議場</title>
+<meta name="description" content="第9回日本メディカルAI学会学術集会。テーマ「デジタルと身体をつなぐ医療AI －デジタルツインとPhysical AIの融合－」。2027年6月11日（金）～12日（土）、パシフィコ横浜会議場にて開催。学術集会会長：川上 英良（千葉大学大学院医学研究院 人工知能（AI）医学 教授）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="第9回日本メディカルAI学会学術集会">
+<meta property="og:description" content="デジタルと身体をつなぐ医療AI －デジタルツインとPhysical AIの融合－／2027年6月11日（金）～12日（土）パシフィコ横浜会議場">
+<meta property="og:image" content="assets/kv.avif">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif; color: #0f2e4d; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0b6f9b; text-decoration: none; }
+  a:hover { color: #e0479e; text-decoration: underline; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: #ffffff">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #dde8f0">
+    <div style="height: 4px; background: linear-gradient(90deg, #123a63 0%, #0b7fae 32%, #2fb8c6 52%, #f08c3c 76%, #e0479e 100%)"></div>
+    <div style="{{ hdrInnerStyle }}">
+      <a href="#" onClick="{{ goHome }}" style="display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: inherit">
+        <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: #0b7fae">第9回</span>
+        <span style="{{ hdrTitleStyle }}">日本メディカルAI学会学術集会</span>
+      </a>
+      <div style="flex: 1"></div>
+      <div style="{{ hdrMetaStyle }}">
+        <span>2027年6月11日（金）～12日（土）</span>
+        <span>パシフィコ横浜会議場</span>
+      </div>
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="メニュー" style="display: flex; align-items: center; gap: 10px; background: #123a63; color: #ffffff; border: 0; border-radius: 3px; padding: 12px 18px; cursor: pointer; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; min-height: 46px" style-hover="background: #0b7fae">
+        <span style="display: flex; flex-direction: column; gap: 4px; width: 18px">
+          <span style="display: block; height: 2px; background: #ffffff"></span>
+          <span style="display: block; height: 2px; background: #ffffff"></span>
+          <span style="display: block; height: 2px; background: #ffffff"></span>
+        </span>
+        <span>メニュー</span>
+      </button>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; background: linear-gradient(160deg, #f2fafd 0%, #e6f2fa 45%, #eef4fb 100%); overflow-y: auto">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 20px 20px 72px">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 0 28px">
+          <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.18em; color: #0b7fae">MENU</span>
+          <button type="button" onClick="{{ toggleMenu }}" aria-label="閉じる" style="background: #123a63; color: #ffffff; border: 0; border-radius: 3px; padding: 12px 20px; cursor: pointer; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; min-height: 46px" style-hover="background: #0b7fae">✕　閉じる</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 40px">
+          <sc-for list="{{ navGroups }}" as="group" hint-placeholder-count="4">
+            <div style="display: flex; flex-direction: column; gap: 14px">
+              <div style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: #0b7fae; padding-bottom: 10px; border-bottom: 2px solid #b9dbec">{{ group.title }}</div>
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <sc-for list="{{ group.items }}" as="item" hint-placeholder-count="4">
+                  <a href="#" onClick="{{ item.go }}" style="display: block; padding: 11px 4px; font-size: 15px; line-height: 1.5; font-weight: 500; color: #123a63; border-bottom: 1px solid #dfeaf2; text-decoration: none; min-height: 44px" style-hover="color: #0b7fae; background: rgba(255,255,255,0.7)">{{ item.label }}</a>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <main style="flex: 1">
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <div style="background: linear-gradient(180deg, #eaf5fb 0%, #ffffff 100%)">
+          <img src="assets/kv.avif" alt="第9回日本メディカルAI学会学術集会　デジタルと身体をつなぐ医療AI －デジタルツインとPhysical AIの融合－" style="display: block; width: 100%; height: auto" />
+        </div>
+
+        <div style="background: #123a63; color: #ffffff">
+          <div style="{{ dateBarStyle }}">
+            <div style="display: flex; flex-direction: column; gap: 7px">
+              <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; color: #7fc6e4">会期</span>
+              <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.45">2027年6月11日（金）<br />～12日（土）</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px">
+              <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; color: #7fc6e4">会場</span>
+              <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.45">パシフィコ横浜<br />会議場</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px">
+              <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; color: #7fc6e4">テーマ</span>
+              <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 17px; font-weight: 700; line-height: 1.5">デジタルと身体をつなぐ医療AI<br /><span style="font-size: 14px; font-weight: 500; color: #cfe6f2">－デジタルツインとPhysical AIの融合－</span></span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px">
+              <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; color: #7fc6e4">学術集会会長</span>
+              <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.45">川上 英良</span>
+              <span style="font-size: 12.5px; line-height: 1.6; color: #cfe6f2">千葉大学大学院医学研究院<br />人工知能（AI）医学　教授</span>
+            </div>
+          </div>
+        </div>
+
+        <section style="{{ sectionStyle }}">
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: #0b7fae">OUTLINE</span>
+            <h2 style="{{ h2Style }}">開催概要</h2>
+            <div style="width: 68px; height: 3px; background: linear-gradient(90deg, #0b7fae, #2fb8c6)"></div>
+          </div>
+          <div style="border-top: 1px solid #dde8f0">
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">名称</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">第9回日本メディカルAI学会学術集会</div>
+            </div>
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">テーマ</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">デジタルと身体をつなぐ医療AI<br />－デジタルツインとPhysical AIの融合－</div>
+            </div>
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">会期</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">2027年6月11日（金）～12日（土）</div>
+            </div>
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">会場</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">パシフィコ横浜会議場<br /><span style="font-size: 14px; color: #4a6580">〒220-0012　神奈川県横浜市西区みなとみらい1-1-1</span></div>
+            </div>
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">学術集会会長</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">川上 英良（千葉大学大学院医学研究院　人工知能（AI）医学　教授）</div>
+            </div>
+            <div style="{{ rowStyle }}">
+              <div style="{{ labelCellStyle }}">主催</div>
+              <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85">一般社団法人日本メディカルAI学会</div>
+            </div>
+          </div>
+        </section>
+
+        <section style="{{ sectionStyle }}">
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: #0b7fae">SCHEDULE</span>
+            <h2 style="{{ h2Style }}">重要日程</h2>
+            <div style="width: 68px; height: 3px; background: linear-gradient(90deg, #0b7fae, #2fb8c6)"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #dde8f0">
+            <sc-for list="{{ schedule }}" as="s" hint-placeholder-count="6">
+              <div style="{{ schedRowStyle }}">
+                <div style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 16px; font-weight: 700; color: #0b7fae; letter-spacing: 0.02em">{{ s.date }}</div>
+                <div style="font-size: 15.5px; line-height: 1.7; font-weight: 500">{{ s.label }}</div>
+                <div style="justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #4a6580; background: #f0f6fa; border: 1px solid #dde8f0; border-radius: 2px; padding: 6px 12px; white-space: nowrap">{{ s.status }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin: 18px 0 0; font-size: 13px; line-height: 1.8; color: #4a6580">※日程は予定です。確定次第、本ウェブサイトにてお知らせいたします。</p>
+        </section>
+
+        <section style="{{ sectionLastStyle }}">
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: #0b7fae">CORPORATE PARTNERS</span>
+            <h2 style="{{ h2Style }}">コーポレートパートナー</h2>
+            <div style="width: 68px; height: 3px; background: linear-gradient(90deg, #0b7fae, #2fb8c6)"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px">
+            <sc-for list="{{ logoSlots }}" as="n" hint-placeholder-count="8">
+              <div style="aspect-ratio: 16 / 7; border: 1px solid #dde8f0; background-color: #fbfdfe; background-image: repeating-linear-gradient(135deg, #eef5fa 0 8px, #fbfdfe 8px 16px); display: flex; align-items: center; justify-content: center">
+                <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.06em; color: #7d97ab">企業ロゴ</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top: 28px">
+            <a href="#" onClick="{{ goSponsorship }}" style="display: inline-flex; align-items: center; gap: 10px; background: #123a63; color: #ffffff; padding: 16px 28px; border-radius: 3px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; min-height: 48px" style-hover="background: #0b7fae; text-decoration: none">共催・協賛のお申し込み　→</a>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isSub }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="background: linear-gradient(120deg, #eaf5fb 0%, #f4fafd 50%, #eef3fa 100%); border-bottom: 1px solid #dde8f0">
+          <div style="{{ subHeadStyle }}">
+            <div style="font-size: 12.5px; color: #4a6580"><a href="#" onClick="{{ goHome }}">Home</a>　›　{{ pageTitle }}</div>
+            <h1 style="{{ h1Style }}">{{ pageTitle }}</h1>
+            <div style="width: 68px; height: 3px; background: linear-gradient(90deg, #0b7fae, #2fb8c6)"></div>
+          </div>
+        </div>
+
+        <div style="{{ subBodyStyle }}">
+
+          <sc-if value="{{ isGreetings }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ twoColStyle }}">
+              <div style="display: flex; flex-direction: column; gap: 24px; max-width: 46em">
+                <p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.7; color: #123a63">デジタルと身体をつなぐ医療AI<br />－デジタルツインとPhysical AIの融合－</p>
+                <p style="margin: 0; font-size: 16px; line-height: 2.1; text-wrap: pretty">第9回日本メディカルAI学会学術集会を、2027年6月11日（金）・12日（土）の二日間、パシフィコ横浜会議場にて開催させていただきます。</p>
+                <p style="margin: 0; font-size: 16px; line-height: 2.1; text-wrap: pretty">※ご挨拶の本文は、決定次第こちらに掲載いたします。</p>
+                <div style="margin-top: 8px; padding-top: 24px; border-top: 1px solid #dde8f0; font-size: 15.5px; line-height: 1.9">
+                  第9回日本メディカルAI学会学術集会　学術集会会長<br />
+                  <strong style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 19px; color: #123a63">川上 英良</strong><br />
+                  <span style="font-size: 14px; color: #4a6580">千葉大学大学院医学研究院　人工知能（AI）医学　教授</span>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <div style="{{ photoStyle }}">
+                  <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.06em; color: #7d97ab">会長 顔写真</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isOutline }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 40px">
+              <div style="border-top: 1px solid #dde8f0">
+                <sc-for list="{{ outlineRows }}" as="r" hint-placeholder-count="8">
+                  <div style="{{ rowStyle }}">
+                    <div style="{{ labelCellStyle }}">{{ r.k }}</div>
+                    <div style="padding: 20px 16px; font-size: 15.5px; line-height: 1.85; white-space: pre-line">{{ r.v }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="aspect-ratio: 16 / 9; border: 1px solid #dde8f0; background-color: #fbfdfe; background-image: repeating-linear-gradient(135deg, #eef5fa 0 8px, #fbfdfe 8px 16px); display: flex; align-items: center; justify-content: center">
+                <span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.06em; color: #7d97ab">会場外観写真 / 地図</span>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isEndai }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 48px; max-width: 58em">
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 21px; font-weight: 700; color: #123a63; padding-left: 14px; border-left: 4px solid #0b7fae">募集期間</h2>
+                <p style="margin: 0; font-size: 16px; line-height: 2">2026年12月上旬　～　2027年2月上旬（予定）<br /><span style="font-size: 14px; color: #4a6580">※正式な募集期間は決定次第お知らせいたします。</span></p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 21px; font-weight: 700; color: #123a63; padding-left: 14px; border-left: 4px solid #0b7fae">投稿・発表資格</h2>
+                <p style="margin: 0; font-size: 16px; line-height: 2; text-wrap: pretty">一般演題の発表者、筆頭著者、共著者は、日本メディカルAI学会の会員であり、かつ全ての年会費を納入済みの方に限られます。未入会の方は<a href="https://www.japan-medical-ai.org/application" target="_blank" rel="noopener">こちら</a>より入会手続きを済ませてください。</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 21px; font-weight: 700; color: #123a63; padding-left: 14px; border-left: 4px solid #0b7fae">発表形式・演題区分</h2>
+                <p style="margin: 0; font-size: 16px; line-height: 2; text-wrap: pretty">［講演分類］で【一般演題（口演）】もしくは【一般演題（ポスター）】を選択してください。演題の採否、発表時間、最終的な発表形式や演題区分の決定については、会長・組織委員に一任ください。</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 32px; margin-top: 8px">
+                  <sc-for list="{{ categoryCols }}" as="col" hint-placeholder-count="2">
+                    <div style="border-top: 2px solid #123a63">
+                      <sc-for list="{{ col }}" as="c" hint-placeholder-count="14">
+                        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); border-bottom: 1px solid #dde8f0">
+                          <div style="padding: 11px 8px; background: #f4f9fc; font-size: 13.5px; font-weight: 700; color: #0b7fae; text-align: center">{{ c.no }}</div>
+                          <div style="padding: 11px 12px; font-size: 14.5px; line-height: 1.6">{{ c.name }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 21px; font-weight: 700; color: #123a63; padding-left: 14px; border-left: 4px solid #0b7fae">抄録の文字数</h2>
+                <p style="margin: 0; font-size: 16px; line-height: 2">演題名は65文字以内、抄録本文は840文字以内で入力してください。予め文字数を制限以内に調整した原稿を用意し、投稿画面にコピー＆ペーストすることを推奨します。</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 21px; font-weight: 700; color: #123a63; padding-left: 14px; border-left: 4px solid #0b7fae">演題登録画面</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 14px">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; background: #eef3f7; color: #7d97ab; border: 1px solid #dde8f0; padding: 16px 32px; border-radius: 3px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; font-weight: 700; min-height: 48px">一般演題登録（受付開始前）</span>
+                  <span style="display: inline-flex; align-items: center; justify-content: center; background: #eef3f7; color: #7d97ab; border: 1px solid #dde8f0; padding: 16px 32px; border-radius: 3px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; font-weight: 700; min-height: 48px">確認・修正（受付開始前）</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isPending }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 32px; max-width: 58em">
+              <p style="margin: 0; font-size: 16px; line-height: 2; text-wrap: pretty">{{ pendingLead }}</p>
+              <div style="border: 1px solid #b9dbec; background: #f4fafd; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px">
+                <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 16px; font-weight: 700; color: #123a63">公開予定</span>
+                <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #4a6580">本ページの内容は準備中です。確定次第、本ウェブサイトにて公開いたします。お問い合わせは運営事務局までお願いいたします。</p>
+              </div>
+            </div>
+          </sc-if>
+
+        </div>
+      </div>
+    </sc-if>
+
+  </main>
+
+  <footer style="background: #123a63; color: #dbe9f2; margin-top: auto">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 20px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: #7fc6e4">第9回</span>
+        <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.4; color: #ffffff">日本メディカルAI学会<br />学術集会</span>
+        <span style="font-size: 13.5px; line-height: 1.9">2027年6月11日（金）～12日（土）<br />パシフィコ横浜会議場</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #7fc6e4">事務局</span>
+        <span style="font-size: 13.5px; line-height: 1.95">千葉大学大学院医学研究院<br />人工知能（AI）医学<br /><span style="color: #9fbdd2">※所在地は確定次第掲載いたします</span></span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #7fc6e4">運営事務局</span>
+        <span style="font-size: 13.5px; line-height: 1.95">第9回日本メディカルAI学会学術集会運営事務局<br />株式会社プロアクティブ<br />TEL：078-332-2505　FAX：078-332-2506<br />E-mail：<a href="mailto:jmai2027@pacmice.jp" style="color: #9ed7ef">jmai2027@pacmice.jp</a></span>
+      </div>
+    </div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 20px; border-top: 1px solid rgba(255,255,255,0.16); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
+      <span style="font-size: 12.5px; color: #9fbdd2">© 2027 第9回日本メディカルAI学会学術集会</span>
+      <a href="#" onClick="{{ scrollTop }}" style="font-size: 12.5px; color: #9ed7ef">↑ ページ上部へ</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const NAV = [
+  { title: "集会について", items: [
+    ["home", "Home"],
+    ["greetings", "学術集会長挨拶"],
+    ["outline", "開催概要"],
+    ["program", "プログラム・抄録集"],
+    ["floor", "会場案内図"],
+    ["keynote", "基調講演"],
+  ]},
+  { title: "発表・演題", items: [
+    ["symposium", "シンポジウム企画の公募について"],
+    ["endai", "一般演題募集"],
+    ["endai_shitei", "指定演題登録"],
+    ["coi", "利益相反について"],
+    ["chair_speaker", "座長・演者へのご案内"],
+  ]},
+  { title: "参加される方へ", items: [
+    ["registration", "参加登録"],
+    ["sanka", "参加者へのご案内"],
+    ["access", "会場アクセス"],
+    ["accommodation", "宿泊のご案内"],
+  ]},
+  { title: "企業・プレスの皆様へ", items: [
+    ["sponsorship", "共催・協賛のお申し込み"],
+    ["cp", "コーポレートパートナー企業一覧"],
+    ["poster", "ポスター掲示・チラシ設置・幕間スライド投影申込"],
+    ["press", "プレスの皆様へ"],
+  ]},
+];
+
+const TITLES = {};
+NAV.forEach(g => g.items.forEach(([k, l]) => { TITLES[k] = l; }));
+
+const LEADS = {
+  program: "プログラム・日程表および抄録集は、演題採択後に公開いたします。",
+  floor: "会場案内図（フロアマップ）は、会場レイアウト確定後にPDFで公開いたします。",
+  keynote: "基調講演の演者および講演内容は、決定次第お知らせいたします。",
+  symposium: "シンポジウム企画の公募要領は、決定次第公開いたします。",
+  endai_shitei: "指定演題（シンポジウム・招待講演等）の登録要領は、対象の演者の方へ個別にご案内いたします。",
+  coi: "本学術集会における利益相反（COI）の開示基準および様式は、決定次第公開いたします。",
+  chair_speaker: "座長・演者の皆様へのご案内（発表時間、データ受付、PC受付等）は、プログラム確定後に公開いたします。",
+  registration: "参加登録の受付開始日、参加費、登録方法については、決定次第お知らせいたします。",
+  sanka: "ご参加にあたってのご案内（受付、クローク、Wi-Fi、ランチョンセミナー等）は、開催が近づきましたら公開いたします。",
+  access: "パシフィコ横浜会議場（〒220-0012 神奈川県横浜市西区みなとみらい1-1-1）。みなとみらい線「みなとみらい駅」より徒歩約3分、JR・市営地下鉄「桜木町駅」より徒歩約12分です。詳細な交通案内は決定次第掲載いたします。",
+  accommodation: "宿泊のご案内は、決定次第公開いたします。",
+  sponsorship: "共催・協賛（ランチョンセミナー、企業展示、広告掲載等）の募集要項は、決定次第公開いたします。ご検討いただける場合は運営事務局までご連絡ください。",
+  cp: "第9回学術集会にご協賛いただくコーポレートパートナー企業を、順次掲載いたします。",
+  poster: "ポスター掲示・チラシ設置・幕間スライド投影のお申し込み要領は、決定次第公開いたします。",
+  press: "取材をご希望のプレス関係者の皆様は、運営事務局までお問い合わせください。受付方法の詳細は決定次第公開いたします。",
+};
+
+const CATEGORIES = [
+  "医用画像解析（放射線画像）", "医用画像解析（内視鏡画像、病理画像）", "医用画像解析（その他）",
+  "バイオイメージング", "生成AI・大規模言語モデル／基盤モデル", "オミックス解析", "統合データベース",
+  "医療情報・電子カルテ（自然言語処理）", "サイバーセキュリティー", "クラウド・ネットワーク",
+  "診断", "個別化医療", "創薬", "生化学・分子生物学", "疫学", "予防医学", "数理モデル",
+  "分子シミュレーション", "手術支援AI", "医療用ロボット", "ELSI 「倫理的・法的・社会的課題」",
+  "病院システム", "XR（クロスリアリティ）", "エージェントAI", "トリアージ", "量子AI", "その他",
+];
+
+class Component extends DCLogic {
+  state = { page: "home", menuOpen: false, narrow: false };
+
+  componentDidMount() {
+    this.sync = () => {
+      const n = window.innerWidth < 760;
+      if (n !== this.state.narrow) this.setState({ narrow: n });
+    };
+    this.sync();
+    window.addEventListener("resize", this.sync);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.sync);
+  }
+
+  go(page) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ page, menuOpen: false });
+      if (typeof window !== "undefined") window.scrollTo(0, 0);
+    };
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const cats = CATEGORIES.map((name, i) => ({ no: i + 1, name }));
+    const m = this.state.narrow;
+    return {
+      narrow: m,
+      hdrInnerStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "11px 16px" : "14px 20px", display: "flex", alignItems: "center", gap: m ? 12 : 24 },
+      hdrTitleStyle: { fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: m ? 15.5 : 20, fontWeight: 700, letterSpacing: "0.01em", lineHeight: 1.3, color: "#123a63" },
+      hdrMetaStyle: { display: m ? "none" : "flex", flexDirection: "column", gap: 2, textAlign: "right", fontSize: 12.5, lineHeight: 1.6, color: "#4a6580" },
+      rowStyle: { display: "grid", gridTemplateColumns: m ? "minmax(0, 1fr)" : "minmax(0, 200px) minmax(0, 1fr)", borderBottom: "1px solid #dde8f0" },
+      labelCellStyle: { padding: m ? "12px 16px" : "20px 16px", background: "#f4f9fc", fontFamily: "'Zen Kaku Gothic New', sans-serif", fontWeight: 700, fontSize: 15, color: "#123a63" },
+      schedRowStyle: { display: "grid", gridTemplateColumns: m ? "minmax(0, 1fr)" : "minmax(0, 240px) minmax(0, 1fr) auto", gap: m ? "8px" : "12px 20px", alignItems: m ? "start" : "center", padding: m ? "18px 4px" : "20px 16px", borderBottom: "1px solid #dde8f0" },
+      twoColStyle: { display: "grid", gridTemplateColumns: m ? "minmax(0, 1fr)" : "minmax(0, 1fr) minmax(0, 300px)", gap: m ? 32 : 48, alignItems: "start" },
+      photoStyle: { aspectRatio: "3 / 4", maxWidth: m ? 220 : "none", border: "1px solid #dde8f0", backgroundColor: "#fbfdfe", backgroundImage: "repeating-linear-gradient(135deg, #eef5fa 0 8px, #fbfdfe 8px 16px)", display: "flex", alignItems: "center", justifyContent: "center" },
+      h1Style: { margin: 0, fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: m ? 24 : 34, fontWeight: 700, letterSpacing: "0.02em", lineHeight: 1.4, color: "#123a63" },
+      h2Style: { margin: 0, fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: m ? 23 : 30, fontWeight: 700, letterSpacing: "0.02em", color: "#123a63" },
+      sectionStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "48px 16px 8px" : "72px 20px 8px" },
+      sectionLastStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "48px 16px 64px" : "72px 20px 88px" },
+      subBodyStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "36px 16px 64px" : "56px 20px 88px" },
+      subHeadStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "28px 16px 26px" : "46px 20px 42px", display: "flex", flexDirection: "column", gap: m ? 10 : 14 },
+      dateBarStyle: { maxWidth: 1180, margin: "0 auto", padding: m ? "22px 16px" : "26px 20px", display: "grid", gridTemplateColumns: m ? "minmax(0, 1fr)" : "repeat(auto-fit, minmax(220px, 1fr))", gap: m ? "18px" : "20px 36px" },
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      goHome: this.go("home"),
+      goSponsorship: this.go("sponsorship"),
+      scrollTop: (e) => { if (e) e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); },
+      navGroups: NAV.map(g => ({
+        title: g.title,
+        items: g.items.map(([k, label]) => ({ label, go: this.go(k) })),
+      })),
+      isHome: page === "home",
+      isSub: page !== "home",
+      isGreetings: page === "greetings",
+      isOutline: page === "outline",
+      isEndai: page === "endai",
+      isPending: !!LEADS[page],
+      pendingLead: LEADS[page] || "",
+      pageTitle: TITLES[page] || "",
+      schedule: [
+        { date: "2026年11月", label: "ウェブサイト公開", status: "予定" },
+        { date: "2026年12月上旬", label: "一般演題募集・シンポジウム企画公募 開始", status: "予定" },
+        { date: "2027年2月上旬", label: "一般演題募集・シンポジウム企画公募 締切", status: "予定" },
+        { date: "2027年4月", label: "演題採否通知", status: "予定" },
+        { date: "2027年4月", label: "参加登録 開始", status: "予定" },
+        { date: "2027年6月11日（金）～12日（土）", label: "第9回日本メディカルAI学会学術集会", status: "確定" },
+      ],
+      outlineRows: [
+        { k: "名称", v: "第9回日本メディカルAI学会学術集会" },
+        { k: "テーマ", v: "デジタルと身体をつなぐ医療AI\n－デジタルツインとPhysical AIの融合－" },
+        { k: "会期", v: "2027年6月11日（金）－12日（土）" },
+        { k: "会場", v: "パシフィコ横浜会議場\n〒220-0012 神奈川県横浜市西区みなとみらい1-1-1" },
+        { k: "開催形式", v: "決定次第掲載いたします" },
+        { k: "学術集会会長", v: "川上 英良（千葉大学大学院医学研究院 人工知能（AI）医学 教授）" },
+        { k: "主催", v: "一般社団法人日本メディカルAI学会" },
+        { k: "運営事務局", v: "株式会社プロアクティブ\nTEL: 078-332-2505　FAX: 078-332-2506\nE-mail: jmai2027@pacmice.jp" },
+      ],
+      categoryCols: [cats.slice(0, 14), cats.slice(14)],
+      logoSlots: [1, 2, 3, 4, 5, 6, 7, 8],
+    };
+  }
+}
+</script>
+</body>
+</html>
